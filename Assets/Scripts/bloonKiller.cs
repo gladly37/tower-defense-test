@@ -72,6 +72,7 @@ public class bloonKiller : MonoBehaviour
         dart = Instantiate(dartPrefab,transform.position, transform.rotation);
         dartScript dartScript = dart.GetComponent<dartScript>();
         dartScript.velocity = shootPower;
+        dartScript.lifetime = shootPower / 10;
         dartScript.damage = damage;
     }
 }

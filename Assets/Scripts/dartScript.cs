@@ -6,6 +6,8 @@ public class dartScript : MonoBehaviour
 {
     public float velocity;
     public int damage;
+    public float timeAlive;
+    public float lifetime;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,11 @@ public class dartScript : MonoBehaviour
     void Update()
     {
         transform.position += transform.forward * velocity * Time.deltaTime;
+        timeAlive += Time.deltaTime;
+        if (lifetime < timeAlive)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

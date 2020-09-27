@@ -22,6 +22,7 @@ public class bloonSpawner : MonoBehaviour
             bloonScript bloonScript;
             bloonScript = newBloon.GetComponent<bloonScript>();
             bloonScript.health = healthOfBloon;
+            bloonScript.speed = 1 + (1f * healthOfBloon);
             bloonScript.changeColorAndSize(healthOfBloon);
             if (healthOfBloon < 7)
             {

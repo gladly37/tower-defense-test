@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rateOfFire: 1
-  shootPower: 10
+  shootPower: 20
   range: 5
   damage: 1
   cooldownTimer: 0
