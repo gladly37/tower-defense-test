@@ -16,7 +16,7 @@ public class bloonScript : MonoBehaviour
     {
         path = GameObject.Find("Path").GetComponent<PathCreator>();
         thisColor = GetComponent<Renderer>().material;
-        changeColorAndSize(health);
+        changeStats(health);
     }
 
     // Update is called once per frame
@@ -29,14 +29,14 @@ public class bloonScript : MonoBehaviour
     public void TakeDamage(int damageTaken)
     {
         health -= damageTaken;
-        changeColorAndSize(health);
+        changeStats(health);
         if (health <= 0)
         {
             Destroy(this.gameObject);
         }
     }
 
-    public void changeColorAndSize(int currentHealth)
+    public void changeStats(int currentHealth)
     {
         switch (currentHealth)
         {
@@ -73,5 +73,6 @@ public class bloonScript : MonoBehaviour
         }
 
         this.transform.localScale = new Vector3(1f + (float)currentHealth / 10, 1f + (float)currentHealth / 10, 1f + (float)currentHealth / 10);
+        speed = 1 + (1f * health);
     }
 }
