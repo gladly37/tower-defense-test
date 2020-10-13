@@ -15,19 +15,18 @@ public class bloonSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GameObject newBloon;
-            newBloon = Instantiate(bloon);
-            bloonScript bloonScript;
-            bloonScript = newBloon.GetComponent<bloonScript>();
-            bloonScript.health = healthOfBloon;
-            bloonScript.speed = 1 + (1f * healthOfBloon);
-            bloonScript.changeStats(healthOfBloon);
-            if (healthOfBloon < 7)
-            {
-                healthOfBloon += 1;
-            }
-        }
+
+    }
+
+    public void spawnBloon()
+    {
+
+        GameObject newBloon;
+        newBloon = Instantiate(bloon);
+        bloonScript bloonScript;
+        bloonScript = newBloon.GetComponent<bloonScript>();
+        bloonScript.health = healthOfBloon;
+        bloonScript.speed = 1 + (1f * healthOfBloon);
+        bloonScript.changeStats(healthOfBloon);
     }
 }
